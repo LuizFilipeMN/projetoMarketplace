@@ -1,15 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Loja extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['nome', 'endereco', 'cidade', 'estado', 'telefone', 'email', 'cnpj'];
 
     public function produtos()
     {
-        return $this->hasMany(Uniforme::class);
+        return $this->hasMany(Produto::class);
     }
 }

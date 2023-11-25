@@ -23,13 +23,15 @@ class ProdutoController extends Controller
         $request->validate([
             'nome' => 'required|string|max:255',
             'descricao' => 'required|string',
-            'preco' => 'required|numeric',
+            'preco' => 'required|numeric', 
         ]);
 
         Produto::create([
             'nome' => $request->nome,
             'descricao' => $request->descricao,
             'preco' => $request->preco,
+            'loja_id' => 1,
+            'foto_url' => ''
         ]);
 
         return redirect()->route('produtos.index')->with('success', 'Produto criado com sucesso.');
@@ -52,6 +54,8 @@ class ProdutoController extends Controller
             'nome' => $request->nome,
             'descricao' => $request->descricao,
             'preco' => $request->preco,
+            'loja_id' => 1,
+            'foto_url' => ''
         ]);
 
         return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso.');
