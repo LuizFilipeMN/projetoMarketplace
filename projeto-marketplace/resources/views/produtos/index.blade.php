@@ -24,7 +24,7 @@
                             <td>{{ $produto->nome }}</td>
                             <td>{{ $produto->descricao }}</td>
                             <td>{{ $produto->preco }}</td>
-                            <td>
+                            <td class="">
                                 <a class="btn btn-primary" href="{{ route('produtos.show', $produto) }}">Ver</a>
                                 <a class="btn btn-warning" href="{{ route('produtos.edit', $produto) }}">Editar</a>
                                 <form action="{{ route('produtos.destroy', $produto) }}" method="POST">

@@ -18,6 +18,11 @@ class ProdutoController extends Controller
         return view('produtos.create');
     }
 
+    public function show(Produto $produto)
+    {
+        return view('produtos.show', compact('produto'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
