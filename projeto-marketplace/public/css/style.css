@@ -28,7 +28,51 @@ a {
     margin-top: 15px;
 }
 
+.endereco input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1e1e;
+    color: #bebebe;
+    margin-top: 15px;
+}
+
+.cidade input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1e1e;
+    color: #bebebe;
+    margin-top: 15px;
+}
+
+.estado input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1e1e;
+    color: #bebebe;
+    margin-top: 15px;
+}
+
 .email input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1e1e;
+    color: #bebebe;
+    margin-top: 15px;
+}
+
+.cnpj input {
     border-radius: 15px;
     border: none;
     width: 250px;
@@ -51,6 +95,17 @@ a {
 }
 
 .telefone input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1e1e;
+    color: #bebebe;
+    margin-top: 15px;
+}
+
+.cnpj input {
     border-radius: 15px;
     border: none;
     width: 250px;
