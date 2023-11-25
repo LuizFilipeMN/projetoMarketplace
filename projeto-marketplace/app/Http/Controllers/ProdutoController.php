@@ -30,7 +30,7 @@ class ProdutoController extends Controller
             'nome' => $request->nome,
             'descricao' => $request->descricao,
             'preco' => $request->preco,
-            'loja_id' => 1,
+            'loja_id' => 6,
             'foto_url' => ''
         ]);
 
@@ -54,8 +54,8 @@ class ProdutoController extends Controller
             'nome' => $request->nome,
             'descricao' => $request->descricao,
             'preco' => $request->preco,
-            'loja_id' => 1,
-            'foto_url' => ''
+            'loja_id' => $produto->loja_id,
+            'foto_url' => $produto->foto_url
         ]);
 
         return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso.');
