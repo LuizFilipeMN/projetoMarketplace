@@ -51,8 +51,7 @@
 
                 <div class="entrar">
                     <input type="submit" value="Cadastrar">
-                    <p>Já possui uma conta?<a href=""> Clique aqui </a></p>
-                    {{-- <p>Já possui uma conta?<a href="{{ route('login') }}"> Clique aqui </a></p> --}}
+                    <p>Já possui uma conta?<a href="{{ route('login') }}"> Clique aqui </a></p>
                 </div>
             </form>
 
