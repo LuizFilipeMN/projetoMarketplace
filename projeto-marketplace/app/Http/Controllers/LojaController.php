@@ -28,6 +28,6 @@ class LojaController extends Controller
         $loja = new Loja($validatedData);
         $loja->senha = bcrypt($request->senha);
         $loja->save();
-        return redirect()->route('cadastro.create')->with('success', 'Cadastro realizado com sucesso!');
+        return redirect()->route('login')->with('success', 'Cadastro realizado com sucesso!');
     }
 }
