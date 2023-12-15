@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use Illuminate\Support\Facades\Auth;
 
 class ProdutoController extends Controller
 {
     public function index()
     {
-        $produtos = Produto::all();
-        return view('produtos.index', compact('produtos'));
+        if (Auth::check()) {
+            $lojaId = Auth::user()->loja_id;
+            $produtos = Produto::where('loja_id', $lojaId)->get();
+            return view('produtos.index', compact('produtos'));
+        }
+
+        return redirect()->route('login');
     }
 
     public function create()
@@ -30,13 +36,16 @@ class ProdutoController extends Controller
             'descricao' => 'required|string',
             'preco' => 'required|numeric', 
         ]);
+        
+        $lojaId = Auth::user()->loja_id;
 
         Produto::create([
             'nome' => $request->nome,
             'descricao' => $request->descricao,
             'preco' => $request->preco,
-            'loja_id' => 6,
-            'foto_url' => ''
+            'loja_id' => $lojaId,
+            'foto_url' => '',
+            'categoria' => $request->categoria,
         ]);
 
         return redirect()->route('produtos.index')->with('success', 'Produto criado com sucesso.');
@@ -60,7 +69,8 @@ class ProdutoController extends Controller
             'descricao' => $request->descricao,
             'preco' => $request->preco,
             'loja_id' => $produto->loja_id,
-            'foto_url' => $produto->foto_url
+            'foto_url' => $produto->foto_url,
+            'categoria' => $request->categoria,
         ]);
 
         return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso.');

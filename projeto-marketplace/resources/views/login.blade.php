@@ -14,10 +14,6 @@
             <img src="{{ asset('img/logo/u-removebg-preview.png') }}" alt="">
             <h1>Login</h1>
 
-            @if(session('error'))
-                <p style="color: red;">{{ session('error') }}</p>
-            @endif
-
             <form method="post" action="{{ route('login') }}">
                 @csrf
                 <div class="email">
