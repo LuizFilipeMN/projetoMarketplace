@@ -12,7 +12,7 @@
         <div class="caixa">
 
             <img src="{{ asset('img/logo/u-removebg-preview.png') }}" alt="">
-            <h1>CRIAR CONTA</h1>
+            <h1>Cadastre-se</h1>
 
             <form method="post" action="{{ route('cadastro.store') }}">
                 @csrf

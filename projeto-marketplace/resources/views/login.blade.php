@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>ENTRAR</title>
+    <title>Login</title>
 </head>
 <body>
     <div id="login">
         <div class="caixa">
 
             <img src="{{ asset('img/logo/u-removebg-preview.png') }}" alt="">
-            <h1>LOGIN</h1>
+            <h1>Login</h1>
+
+            @if(session('error'))
+                <p style="color: red;">{{ session('error') }}</p>
+            @endif
 
             <form method="post" action="{{ route('login') }}">
                 @csrf
-                <div class="nome">
-                    <input type="text" name="nome" placeholder="Nome">
+                <div class="email">
+                    <input type="text" name="email" placeholder="Email">
                 </div>
 
                 <div class="senha">
