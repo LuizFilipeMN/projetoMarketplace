@@ -8,6 +8,11 @@
     <title>Login</title>
 </head>
 <body>
+    @if (session()->has('message'))
+    <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div id="login">
         <div class="caixa">
 

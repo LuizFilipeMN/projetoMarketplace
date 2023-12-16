@@ -4,15 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 class Loja extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'endereco', 'cidade', 'estado', 'telefone', 'email', 'cnpj', 'senha'];
+    protected $fillable = [
+        'nome', 
+        'endereco',
+        'cidade', 
+        'estado', 
+        'telefone',
+        'email', 
+        'cnpj', 
+        'password'
+    ];
 
-    public function produtos()
+    public function setTipoAttribute($value)
     {
-        return $this->hasMany(Produto::class);
+        $this->attributes['tipo'] = ucfirst($value);
     }
 }
+

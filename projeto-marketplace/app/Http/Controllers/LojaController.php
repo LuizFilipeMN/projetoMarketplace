@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Loja;
+// use App\Models\Loja;
+use App\Models\user;
 
 class LojaController extends Controller
 {
@@ -21,13 +22,13 @@ class LojaController extends Controller
             'estado' => 'required|string|max:255',
             'telefone' => 'required|string|max:20',
             'email' => 'required|email|max:255',
-            'cnpj' => 'required|string|max:20',
-            'senha' => 'required|string|min:6',
+            'cnpj' => 'required_if:tipo_usuario,vendedor|string|max:20',
+            'password' => 'required|string|min:6',
         ]);
-
-        $loja = new Loja($validatedData);
-        $loja->senha = bcrypt($request->senha);
-        $loja->save();
+        $usuario = new user($validatedData);
+        $usuario->password = bcrypt($request->password);
+        $usuario->tipo = $request->tipo_usuario;
+        $usuario->save();
         return redirect()->route('login')->with('success', 'Cadastro realizado com sucesso!');
     }
 }

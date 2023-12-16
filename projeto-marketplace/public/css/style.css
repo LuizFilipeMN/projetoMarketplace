@@ -1,7 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(0, 0, 0);
+    background-color: #000; 
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -14,109 +16,28 @@ a {
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.nome input {
+
+input {
     border-radius: 15px;
     border: none;
     width: 250px;
     height: 40px;
     padding-left: 15px;
+    margin-top: 15px;
     background-color: #1e1e1e;
     color: #bebebe;
-    margin-top: 15px;
 }
 
-.endereco input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
-.cidade input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
-.estado input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
-.email input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
-.cnpj input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
+.email input,
 .senha input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
     background-color: #1e1c2e;
-    color: #bebebe;
-    margin-top: 15px;
 }
 
-.telefone input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
-.cnpj input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1e1e;
-    color: #bebebe;
-    margin-top: 15px;
-}
-
-.entrar input{
+.entrar input {
     cursor: pointer;
     width: 120px;
     height: 40px;
@@ -127,7 +48,7 @@ a {
     margin-top: 15px;
 }
 
-input::placeholder{
+input::placeholder {
     color: #bebebe;
 }
 
@@ -136,9 +57,46 @@ h1 {
 }
 
 .caixa {
-    margin-top: 65px;
+    background-color: #1e1e1e; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: auto; 
 }
 
 .caixa img {
     width: 180px;
+    margin-bottom: 20px;
+}
+
+
+.cpf,
+.cnpj {
+    display: none;
+}
+
+#tipo_usuario {
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    padding-left: 15px;
+    margin-top: 15px;
+    background-color: #1e1e1e; 
+    color: #bebebe;
+}
+
+.caixa p {
+    text-align: right;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.caixa a {
+    color: #0d6efd;
+}
+
+#tipo_usuario_label {
+    font-size: 13px;
 }
